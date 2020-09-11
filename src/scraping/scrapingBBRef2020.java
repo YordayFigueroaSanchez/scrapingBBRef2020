@@ -56,7 +56,8 @@ public class scrapingBBRef2020 {
 				);
 		ArrayList<String> arrayUrlBoxScoreJornada03 = new ArrayList<String>(
 				Arrays.asList(
-						"https://www.baseball-reference.com/boxes/ANA/ANA202008290.shtml")
+						"https://www.baseball-reference.com/boxes/ANA/ANA202008290.shtml",
+						"https://www.baseball-reference.com/boxes/ATL/ATL202009070.shtml")
 				);
 		String urlBoxscores = "https://fbref.com/en/matches/0b6d40c5/Barcelona-Huesca-September-2-2018-La-Liga";
 		String urlPbp = "https://www.basketball-reference.com/pbp/202001310BRK.html";

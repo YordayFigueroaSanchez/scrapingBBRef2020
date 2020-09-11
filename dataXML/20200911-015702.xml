@@ -1,0 +1,22 @@
+<matchday nro="03">
+ <game date="Saturday, August 29, 2020" start_time_original="Start Time: 6:40 p.m. Local" start_time="6:40 p.m." venue_original="<strong>Venue</strong>: Angel Stadium of Anaheim" venue="Angel Stadium of Anaheim">
+  <team name="Los Angeles Angels" url="/teams/LAA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009041/tlogo/br/LAA-2020.png" runs="16" id="LAA-2020" win="13" lost="22">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+  <team name="Seattle Mariners" url="/teams/SEA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009041/tlogo/br/SEA-2020.png" runs="3" id="SEA-2020" win="12" lost="22">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+ </game>
+ <game date="Monday, September 7, 2020" start_time_original="Start Time: 1:10 p.m. Local" start_time="1:10 p.m." venue_original="<strong>Venue</strong>: Truist Park" venue="Truist Park">
+  <team name="Atlanta Braves" url="/teams/ATL/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009041/tlogo/br/ATL-2020.png" runs="4" id="ATL-2020" win="18" lost="18">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+  <team name="Miami Marlins" url="/teams/MIA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009041/tlogo/br/MIA-2020.png" runs="5" id="MIA-2020" win="24" lost="17">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+ </game>
+</matchday>

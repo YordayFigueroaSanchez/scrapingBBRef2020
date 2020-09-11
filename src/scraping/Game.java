@@ -1,6 +1,7 @@
 package scraping;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.swing.text.AbstractDocument.LeafElement;
 
@@ -9,6 +10,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import datatypes.StrArrayKeyValueVO;
+import static scraping.Constants.*;
+
+
 public class Game {
 
 	public Game() {
@@ -16,30 +21,80 @@ public class Game {
 	}
 
 	public Element extractGame(Document documento) {
-//		ArrayList<Element> teams = this.extractData(documento);
-//		Element teamAway = teams.get(0);
-//		Element teamHome = teams.get(1);
-//
+		ArrayList<Element> teams = this.extractData(documento);
+		Element teamAway = teams.get(0);
+		Element teamHome = teams.get(1);
+
 //		for (Element elementTeamAway : this.extractSummary(documento, "a")) {
 //			teamAway.appendChild(elementTeamAway);
 //		}
 //		for (Element elementTeamHome : this.extractSummary(documento, "b")) {
 //			teamHome.appendChild(elementTeamHome);
 //		}
-//
-//		Element game = documento.createElement("game").appendChild(teamAway);
-//		game.appendChild(teamHome);
-//
+
+		Element game = documento.createElement(GAME).appendChild(teamAway);
+		game.appendChild(teamHome);
+		
+		game.attr(GAME_DATE, this.extractDateGame(documento));
+		
+		//game start time
+		StrArrayKeyValueVO gameStartTime = this.extractStartTimeGame(documento);
+		game.attr(GAME_START_TIME_ORIGINAL, gameStartTime.getStrOriginal());
+		Enumeration<String> keysValues = gameStartTime.getValues().keys(); 
+		while (keysValues.hasMoreElements()) {
+			String keyValue = keysValues.nextElement();
+			String value = gameStartTime.getValues().get(keyValue);
+			game.attr(keyValue, value);
+		}
+		//game venue game
+		StrArrayKeyValueVO gameVenue = this.extractVenueGame(documento);
+		game.attr(GAME_VENUE_ORIGINAL, gameVenue.getStrOriginal());
+		Enumeration<String> keysValuesVenue = gameVenue.getValues().keys(); 
+		while (keysValuesVenue.hasMoreElements()) {
+			String keyValue = keysValuesVenue.nextElement();
+			String value = gameVenue.getValues().get(keyValue);
+			game.attr(keyValue, value);
+		}
+
+		
 //		game.attr("asistencia", this.extractAsistencia(documento));
 //		game.attr("datetime", this.extractFecha(documento));
 //		game.attr("datetimeepoch", this.extractFechaEpoch(documento));
 //
 //		this.extractSummary(documento, "a");
 //		this.extractSummary(documento, "b");
-		Element game = documento.createElement("game");
-		game.attr("prueba","okLllego");
+//		Element game = documento.createElement("game");
+		
+//		game.attr("prueba","okLllego");
 
 		return game;
+	}
+
+	private String extractDateGame(Document documento) {
+		Elements scoreboxElements = documento.select("div > div > div.scorebox > div.scorebox_meta > div");
+		return scoreboxElements.get(0).text();
+		
+	}
+	private StrArrayKeyValueVO extractStartTimeGame(Document documento) {
+		StrArrayKeyValueVO valueReturn = new StrArrayKeyValueVO();
+		Elements scoreboxElements = documento.select("div > div > div.scorebox > div.scorebox_meta > div");
+		String str = "";
+		str = scoreboxElements.get(1).text();
+		valueReturn.setStrOriginal(str);
+		valueReturn.getValues().put(GAME_START_TIME, str.replaceAll("Start Time:", "").replaceAll("Local", "").trim());
+		return valueReturn;
+		
+	}
+	private StrArrayKeyValueVO extractVenueGame(Document documento) {
+		StrArrayKeyValueVO valueReturn = new StrArrayKeyValueVO();
+		Element VenueGameElement = documento.select("div  > strong:contains(Venue)").first().parents().first();
+		String strVenueGameText = VenueGameElement.html();
+		String[] strTimeOfGameArray = strVenueGameText.split("</strong>");
+		String strVenueGame = strTimeOfGameArray[1].trim();
+		valueReturn.setStrOriginal(strVenueGameText);
+		valueReturn.getValues().put(GAME_VENUE, strVenueGame.replaceAll("\"", "").replaceAll(":", "").trim());
+		return valueReturn;
+		
 	}
 
 	private Element extractSummaryGoal(Document documento, String typeTeam) {
@@ -496,17 +551,24 @@ public class Game {
 		Elements scoreElements = documento.select("div.scorebox > div > div.scores > div.score");
 
 		Elements scoreElementsDiv = documento.select("div.scorebox > div > div");
+		
+		Elements scoreElementsDivTeams = documento.select("div.scorebox > div");
 
 		Elements scoreboxElementsScore = documento.select("div > div > div.scorebox > div > div.scores > div.score");
 
 		/* TEAM AWAY */
 		Element teamAwayLogo = scoreboxElements.get(1).select("strong > a").first();
 		Element teamAwayPhoto = scoreboxElements.get(1).select("div > img").first();
-		Element teamAway = documento.createElement("team").attr("name", teamAwayLogo.text());
-		teamAway.attr("url", teamAwayLogo.attr("href"));
-		teamAway.attr("logo", teamAwayPhoto.attr("src"));
-		teamAway.attr("goal", scoreboxElementsScore.get(1).text());
-		teamAway.attr("idteam", this.idTeam(teamAwayPhoto.attr("src")));
+		Element teamAway = documento.createElement(TEAM).attr(TEAM_NAME, teamAwayLogo.text());
+		teamAway.attr(TEAM_URL, teamAwayLogo.attr("href"));
+		teamAway.attr(TEAM_LOGO, teamAwayPhoto.attr("src"));
+		teamAway.attr(TEAM_RUNS, scoreboxElementsScore.get(1).text());
+		teamAway.attr(TEAM_ID, this.idTeam(teamAwayPhoto.attr("src")));
+		Element teamAwayWinLostDiv = scoreElementsDivTeams.get(0).select("div").get(5);
+		String strTeamAwayWinLost = teamAwayWinLostDiv.text();
+		String [] colStrAwayWinLost = strTeamAwayWinLost.split("-");
+		teamAway.attr(TEAM_WIN, colStrAwayWinLost[0].trim());
+		teamAway.attr(TEAM_LOST, colStrAwayWinLost[1].trim());
 
 		teamAway.appendChild(extractPlayer(documento, teamAway.attr("idteam")));
 		teamAway.appendChild(extractPlayerPortero(documento, teamAway.attr("idteam")));
@@ -514,11 +576,16 @@ public class Game {
 		/* TEAM HOME */
 		Element teamHomeLogo = scoreboxElements.get(0).select("strong > a").first();
 		Element teamHomePhoto = scoreboxElements.get(0).select("div > img").first();
-		Element teamHome = documento.createElement("team").attr("name", teamHomeLogo.text());
-		teamHome.attr("url", teamHomeLogo.attr("href"));
-		teamHome.attr("logo", teamHomePhoto.attr("src"));
-		teamHome.attr("goal", scoreboxElementsScore.get(0).text());
-		teamHome.attr("idteam", this.idTeam(teamHomePhoto.attr("src")));
+		Element teamHome = documento.createElement(TEAM).attr(TEAM_NAME, teamHomeLogo.text());
+		teamHome.attr(TEAM_URL, teamHomeLogo.attr("href"));
+		teamHome.attr(TEAM_LOGO, teamHomePhoto.attr("src"));
+		teamHome.attr(TEAM_RUNS, scoreboxElementsScore.get(0).text());
+		teamHome.attr(TEAM_ID, this.idTeam(teamHomePhoto.attr("src")));
+		Element teamHomeWinLostDiv = scoreElementsDivTeams.get(1).select("div").get(5);
+		String strTeamHomeWinLost = teamHomeWinLostDiv.text();
+		String [] colStrHomeWinLost = strTeamHomeWinLost.split("-");
+		teamHome.attr(TEAM_WIN, colStrHomeWinLost[0].trim());
+		teamHome.attr(TEAM_LOST, colStrHomeWinLost[1].trim());
 
 		teamHome.appendChild(extractPlayer(documento, teamHome.attr("idteam")));
 		teamHome.appendChild(extractPlayerPortero(documento, teamHome.attr("idteam")));
