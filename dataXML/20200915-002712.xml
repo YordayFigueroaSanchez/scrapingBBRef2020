@@ -1,0 +1,96 @@
+<matchday nro="03">
+ <game date_original="Saturday, August 29, 2020" day="29" year="2020" month="8" start_time_original="Start Time: 6:40 p.m. Local" hour="18" minute="40" venue_original="<strong>Venue</strong>: Angel Stadium of Anaheim" venue="Angel Stadium of Anaheim">
+  <team name="Los Angeles Angels" url="/teams/LAA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/LAA-2020.png" runs="16" id="LAA-2020" win="13" lost="22" line_score_original="<td class=&quot;center&quot;> 
+ <div class=&quot;media-item logo loader&quot;> 
+  <img class=&quot;teamlogo&quot; itemscope=&quot;image&quot; src=&quot;https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/SEA-2020.png&quot; alt=&quot;2020 Seattle Mariners Logo&quot;> 
+  <p><a href=&quot;http://www.sportslogos.net/&quot;>via Sports Logos.net</a></p> 
+  <p><a href=&quot;https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/&quot;>About logos</a></p> 
+ </div> </td> 
+<td><a href=&quot;/teams/SEA/2020.shtml&quot;>Seattle Mariners</a></td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>3</td> 
+<td class=&quot;center&quot;>7</td> 
+<td class=&quot;center&quot;>0</td>" linescore_hits="7" linescore_errors="0" linescore_runs="3">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+  <team name="Seattle Mariners" url="/teams/SEA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/SEA-2020.png" runs="3" id="SEA-2020" win="12" lost="22" line_score_original="<td class=&quot;center&quot;> 
+ <div class=&quot;media-item logo loader&quot;> 
+  <img class=&quot;teamlogo&quot; itemscope=&quot;image&quot; src=&quot;https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/LAA-2020.png&quot; alt=&quot;2020 Los Angeles Angels Logo&quot;> 
+  <p><a href=&quot;http://www.sportslogos.net/&quot;>via Sports Logos.net</a></p> 
+  <p><a href=&quot;https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/&quot;>About logos</a></p> 
+ </div> </td> 
+<td><a href=&quot;/teams/LAA/2020.shtml&quot;>Los Angeles Angels</a></td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>2</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>3</td> 
+<td class=&quot;center&quot;>4</td> 
+<td class=&quot;center&quot;>4</td> 
+<td class=&quot;center&quot;>2</td> 
+<td class=&quot;center&quot;>X</td> 
+<td class=&quot;center&quot;>16</td> 
+<td class=&quot;center&quot;>13</td> 
+<td class=&quot;center&quot;>0</td>" linescore_hits="13" linescore_errors="0" linescore_runs="16">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+ </game>
+ <game date_original="Monday, September 7, 2020" day="7" year="2020" month="9" start_time_original="Start Time: 1:10 p.m. Local" hour="13" minute="10" venue_original="<strong>Venue</strong>: Truist Park" venue="Truist Park">
+  <team name="Atlanta Braves" url="/teams/ATL/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/ATL-2020.png" runs="4" id="ATL-2020" win="18" lost="18" line_score_original="<td class=&quot;center&quot;> 
+ <div class=&quot;media-item logo loader&quot;> 
+  <img class=&quot;teamlogo&quot; itemscope=&quot;image&quot; src=&quot;https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/MIA-2020.png&quot; alt=&quot;2020 Miami Marlins Logo&quot;> 
+  <p><a href=&quot;http://www.sportslogos.net/&quot;>via Sports Logos.net</a></p> 
+  <p><a href=&quot;https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/&quot;>About logos</a></p> 
+ </div> </td> 
+<td><a href=&quot;/teams/MIA/2020.shtml&quot;>Miami Marlins</a></td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>2</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>5</td> 
+<td class=&quot;center&quot;>9</td> 
+<td class=&quot;center&quot;>3</td>" linescore_hits="9" linescore_errors="3" linescore_runs="5">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+  <team name="Miami Marlins" url="/teams/MIA/2020.shtml" logo="https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/MIA-2020.png" runs="5" id="MIA-2020" win="24" lost="17" line_score_original="<td class=&quot;center&quot;> 
+ <div class=&quot;media-item logo loader&quot;> 
+  <img class=&quot;teamlogo&quot; itemscope=&quot;image&quot; src=&quot;https://d2p3bygnnzw9w3.cloudfront.net/req/202009101/tlogo/br/ATL-2020.png&quot; alt=&quot;2020 Atlanta Braves Logo&quot;> 
+  <p><a href=&quot;http://www.sportslogos.net/&quot;>via Sports Logos.net</a></p> 
+  <p><a href=&quot;https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/&quot;>About logos</a></p> 
+ </div> </td> 
+<td><a href=&quot;/teams/ATL/2020.shtml&quot;>Atlanta Braves</a></td> 
+<td class=&quot;center&quot;>2</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>1</td> 
+<td class=&quot;center&quot;>0</td> 
+<td class=&quot;center&quot;>4</td> 
+<td class=&quot;center&quot;>8</td> 
+<td class=&quot;center&quot;>2</td>" linescore_hits="8" linescore_errors="2" linescore_runs="4">
+   <players></players>
+   <goalkeepers></goalkeepers>
+  </team>
+ </game>
+</matchday>

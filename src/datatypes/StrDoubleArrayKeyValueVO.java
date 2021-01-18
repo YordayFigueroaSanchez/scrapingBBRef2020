@@ -2,15 +2,17 @@ package datatypes;
 
 import java.util.Hashtable;
 
-public class StrArrayKeyValueVO {
+public class StrDoubleArrayKeyValueVO {
 	
 	private String strKey;
 	private String strOriginal;
 	private Hashtable<String, String> values = new Hashtable<String, String>(); 
+	private Hashtable<String, String> values2 = new Hashtable<String, String>(); 
 	
-	public StrArrayKeyValueVO() {
+	public StrDoubleArrayKeyValueVO() {
 		this.strOriginal = "";
 		this.values = new Hashtable<String,String>();
+		this.setValues2(new Hashtable<String,String>());
 	}
 
 	public String getStrOriginal() {
@@ -35,6 +37,14 @@ public class StrArrayKeyValueVO {
 
 	public void setStrKey(String strKey) {
 		this.strKey = strKey;
+	}
+
+	public Hashtable<String, String> getValues2() {
+		return values2;
+	}
+
+	public void setValues2(Hashtable<String, String> values2) {
+		this.values2 = values2;
 	}
 	
 	
